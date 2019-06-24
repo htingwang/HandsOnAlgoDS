@@ -1,15 +1,7 @@
 https://leetcode.com/problems/statistics-from-a-large-sample/
 
 1093. Statistics from a Large Sample
-Medium
 
-14
-
-59
-
-Favorite
-
-Share
 We sampled integers between 0 and 255, and stored the results in an array count:  count[k] is the number of integers we sampled equal to k.
 
 Return the minimum, maximum, mean, median, and mode of the sample respectively, as an array of floating point numbers.  The mode is guaranteed to be unique.
