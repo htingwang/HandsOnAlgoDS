@@ -1,4 +1,4 @@
-https://leetcode.com/problems/max-stack/submissions/
+https://leetcode.com/problems/max-stack/
 
 716. Max Stack
 
