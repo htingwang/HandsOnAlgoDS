@@ -1,37 +1,31 @@
-https://leetcode.com/problems/find-k-length-substrings-with-no-repeated-characters/
+https://leetcode.com/problems/delete-nodes-and-return-forest/
 
-1100. Find K-Length Substrings With No Repeated Characters
+1110. Delete Nodes And Return Forest
 
 
-Given a string S, return the number of substrings of length K with no repeated characters.
+Given the root of a binary tree, each node in the tree has a distinct value.
+
+After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).
+
+Return the roots of the trees in the remaining forest.  You may return the result in any order.
 
  
 
 Example 1:
 
-Input: S = "havefunonleetcode", K = 5
 
-Output: 6
 
-Explanation: 
+Input: root = [1,2,3,4,5,6,7], to_delete = [3,5]
 
-There are 6 substrings they are : 'havef','avefu','vefun','efuno','etcod','tcode'.
-
-Example 2:
-
-Input: S = "home", K = 5
-
-Output: 0
-
-Explanation: 
-
-Notice K can be larger than the length of S. In this case is not possible to find any substring.
+Output: [[1,2,null,4],[6],[7]]
  
 
-Note:
+Constraints:
 
-1 <= S.length <= 10^4
+The number of nodes in the given tree is at most 1000.
 
-All characters of S are lowercase English letters.
+Each node has a distinct value between 1 and 1000.
 
-1 <= K <= 10^4
+to_delete.length <= 1000
+
+to_delete contains distinct values between 1 and 1000.
