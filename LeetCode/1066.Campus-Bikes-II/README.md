@@ -14,7 +14,7 @@ Return the minimum possible sum of Manhattan distances between each worker and t
 
 Example 1:
 
-<img src = "https://imgur.com/gpx7bJH">
+<img src = "img/1261_example_1_v2.png">
 <br>
 
 ```
@@ -26,8 +26,8 @@ We assign bike 0 to worker 0, bike 1 to worker 1. The Manhattan distance of both
 ```
 Example 2:
 
-<img src = "https://imgur.com/wk4Fuvj">
-<br>
+<img src = "img/1261_example_2_v2.png">
+</br>
 
 ```
 Input: workers = [[0,0],[1,1],[2,0]], bikes = [[1,0],[2,2],[2,1]]
