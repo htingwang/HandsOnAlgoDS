@@ -24,10 +24,12 @@ Output: [1,0]
 Explanation: 
 Worker 1 grabs Bike 0 as they are closest (without ties), and Worker 0 is assigned Bike 1. So the output is [1, 0].
 ```
+
 Example 2:
 
 <img src = "img/1261_example_2_v2.png">
 </br>
+
 ```
 Input: workers = [[0,0],[1,1],[2,0]], bikes = [[1,0],[2,2],[2,1]]
 Output: [0,2,1]
@@ -37,6 +39,7 @@ Worker 0 grabs Bike 0 at first. Worker 1 and Worker 2 share the same distance to
  
 
 Note:
+
 ```
 0 <= workers[i][j], bikes[i][j] < 1000
 All worker and bike locations are distinct.
