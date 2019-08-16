@@ -1,27 +1,34 @@
-https://leetcode.com/problems/wiggle-sort-ii
+https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
-324. Wiggle Sort II
+# 323. Number of Connected Components in an Undirected Graph
 
 
-Given an unsorted array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]....
+Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.
 
 Example 1:
 
-Input: nums = [1, 5, 1, 1, 6, 4]
+```
+Input: n = 5 and edges = [[0, 1], [1, 2], [3, 4]]
 
-Output: One possible answer is [1, 4, 1, 5, 1, 6].
+     0          3
+     |          |
+     1 --- 2    4 
+
+Output: 2
+```
 
 Example 2:
 
-Input: nums = [1, 3, 2, 2, 3, 1]
+```
+Input: n = 5 and edges = [[0, 1], [1, 2], [2, 3], [3, 4]]
 
-Output: One possible answer is [2, 3, 1, 3, 1, 2].
+     0           4
+     |           |
+     1 --- 2 --- 3
+
+Output:  1
+```
 
 Note:
-
-You may assume all input has valid answer.
-
-Follow Up:
-
-Can you do it in O(n) time and/or in-place with O(1) extra space?
+- You can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0, 1] is the same as [1, 0] and - - thus will not appear together in edges.
 
