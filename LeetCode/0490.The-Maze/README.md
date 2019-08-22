@@ -29,6 +29,11 @@ Output: true
 
 Explanation: One possible way is : left -> down -> left -> down -> right -> down -> right.
 
+<<<<<<< HEAD
+=======
+Explanation: One shortest way is : left -> down -> left -> down -> right -> down -> right.
+             The total distance is 1 + 1 + 3 + 1 + 2 + 2 + 2 = 12.
+>>>>>>> 7e91b4668796b9604c0259ae514666f555e50b2b
 ```
 <img src = "img/maze_1_example_1.png"></br>
 
@@ -51,7 +56,11 @@ Output: -1
 Explanation: There is no way for the ball to stop at the destination.
 
 ```
+<<<<<<< HEAD
 <img src = "img/maze_1_example_2.png"></br> 
+=======
+ <img src = "img/maze_1_example_2.png"></br>
+>>>>>>> 7e91b4668796b9604c0259ae514666f555e50b2b
 
 Note:
 
