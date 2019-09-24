@@ -14,7 +14,9 @@ If it cannot be done, return -1.
 
 Example 1:
 
-<p><img src="img/domino.png" align="left"></br>
+<p><img src="img/domino.png"></p>
+</br>
+
 
 
 ```
