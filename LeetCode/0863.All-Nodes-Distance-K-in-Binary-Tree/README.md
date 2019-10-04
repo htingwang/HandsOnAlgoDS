@@ -21,7 +21,7 @@ The nodes that are a distance 2 from the target node (with value 5)
 have values 7, 4, and 1.
 ```
 
-<p><img src="img/sketch0.png" align="left"></br>
+<p><img src="img/sketch0.png"></br>
 
 Note that the inputs "root" and "target" are actually TreeNodes.
 The descriptions of the inputs above are just serializations of these objects.
