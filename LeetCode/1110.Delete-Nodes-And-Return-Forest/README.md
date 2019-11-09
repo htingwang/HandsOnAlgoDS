@@ -1,27 +1,28 @@
-https://leetcode.com/problems/corporate-flight-bookings/
+https://leetcode.com/problems/delete-nodes-and-return-forest/
 
-1109. Corporate Flight Bookings
+# 1110. Delete Nodes And Return Forest
 
 
-There are n flights, and they are labeled from 1 to n.
+Given the root of a binary tree, each node in the tree has a distinct value.
 
-We have a list of flight bookings.  The i-th booking bookings[i] = [i, j, k] means that we booked k seats from flights labeled i to j inclusive.
+After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).
 
-Return an array answer of length n, representing the number of seats booked on each flight in order of their label.
-
+Return the roots of the trees in the remaining forest.  You may return the result in any order.<
  
 
 Example 1:
 
-Input: bookings = [[1,2,10],[2,3,20],[2,5,25]], n = 5
+<p><img src="img/screen-shot-2019-07-01-at-53836-pm.png"></br>
 
-Output: [10,55,45,25,25]
- 
+
+```
+Input: root = [1,2,3,4,5,6,7], to_delete = [3,5]
+Output: [[1,2,null,4],[6],[7]]
+``` 
 
 Constraints:
 
-1 <= bookings.length <= 20000
-
-1 <= bookings[i][0] <= bookings[i][1] <= n <= 20000
-
-1 <= bookings[i][2] <= 10000
+- The number of nodes in the given tree is at most 1000.
+- Each node has a distinct value between 1 and 1000.
+- to_delete.length <= 1000
+- to_delete contains distinct values between 1 and 1000.
