@@ -4,6 +4,10 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: List[int]
         """
+        # 1. no circle, but there are two edges ending at same node
+        # 2. has circle, but there are no two edges ending at same node
+        # 3. has circle and there are two edges ening at same node
+        
         n = len(edges)
         first = second = [-1, -1]
         father = [-1] * (n + 1)
