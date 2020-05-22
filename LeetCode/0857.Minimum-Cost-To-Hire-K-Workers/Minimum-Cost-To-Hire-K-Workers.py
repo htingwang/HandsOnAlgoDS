@@ -11,13 +11,13 @@ class Solution(object):
         for i in range(n):
             ratio.append(float(wage[i]) / quality[i])
         
-        minheap = []
+        maxheap = []
         res = float('inf')
         q_sum = 0
         for r, q in sorted(zip(ratio, quality)):
             q_sum += q
-            heapq.heappush(minheap, -q)
-            if len(minheap) > K:
+            heapq.heappush(maxheap, -q)
+            if len(maxheap) > K:
                 q_sum += heapq.heappop(minheap)
-            if len(minheap) == K: res = min(res, q_sum * r)
+            if len(maxheap) == K: res = min(res, q_sum * r)
         return res
