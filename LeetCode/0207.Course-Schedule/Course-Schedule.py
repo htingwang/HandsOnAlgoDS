@@ -5,28 +5,52 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: bool
         """
-        indegree = [0] * numCourses
+        return self.canFinish1(numCourses, prerequisites)
+    # DFS
+    def canFinish2(self, numCourses, prerequisites):
         graph = collections.defaultdict(list)
-        for c1, c2 in prerequisites:
-            graph[c2].append(c1)
-            indegree[c1] += 1
+        visit = [0] * numCourses
+        for c0, c1 in prerequisites:
+            graph[c1].append(c0)
+            
+        for i in range(numCourses):
+            if not self.dfs(i, graph, visit): return False
+            
+        return True
+        
+    def dfs(self, cur, graph, visit):
+        if visit[cur] == -1: return False
+        if visit[cur] == 1: return True
+        
+        visit[cur] = -1
+        for n in graph[cur]:
+            if not self.dfs(n, graph, visit): return False
+            
+        visit[cur] = 1
+        return True
+        
+    # topological sort, Time: O(V+E), Space: O(V+E)
+    def canFinish1(self, numCourses, prerequisites):
+        graph = collections.defaultdict(list)
+        in_deg = [0] * (numCourses)
+        cnt = 0
+        for c0, c1 in prerequisites:
+            graph[c1].append(c0)
+            in_deg[c0] += 1
             
         queue = collections.deque()
-        for i, deg in enumerate(indegree):
-            if deg == 0:
+        for i in range(numCourses):
+            if in_deg[i] == 0: 
                 queue.append(i)
                 
         while queue:
-            cur = queue.popleft()
-            if cur in graph:
-                for n_course in graph[cur]:
-                    indegree[n_course] -= 1
-                    if indegree[n_course] == 0:
-                        queue.append(n_course)
-                    
-        for deg in indegree:
-            if deg != 0:
-                return False
-            
-        return True
-            
+            c = queue.popleft()
+            cnt += 1
+            for n in graph[c]:
+                in_deg[n] -= 1
+                if in_deg[n] == 0:
+                    queue.append(n)
+        
+        return cnt == numCourses
+        
+        
