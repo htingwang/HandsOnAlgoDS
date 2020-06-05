@@ -1,4 +1,4 @@
-class NumArray(object):
+class NumArray1(object):
 
     def __init__(self, nums):
         """
@@ -48,7 +48,7 @@ class NumArray(object):
     
 
 
-class NumArray2(object):
+class NumArray(object):
 
     def __init__(self, nums):
         """
@@ -84,12 +84,18 @@ class NumArray2(object):
         """
         self._update(0, len(self.arr) - 1, i, val - self.arr[i], 0)
         self.arr[i] = val
-        
+
     def query(self, s, e, i, j, idx):
-        if j < s or i > e: return 0
+        if i > e or j < s: return 0
         if i <= s and j >= e: return self.seg[idx]
         mid = (s + e) // 2
         return self.query(s, mid, i, j, 2 * idx + 1) + self.query(mid + 1, e, i, j, 2 * idx + 2)
+    
+    def query2(self, s, e, i, j, idx):
+        if j < s or i > e: return 0
+        if i == s and j == e: return self.seg[idx]
+        mid = (s + e) // 2
+        return self.query(s, mid, max(i, s), min(j, mid), 2 * idx + 1) + self.query(mid + 1, e, max(i, mid + 1), min(j, e), 2 * idx + 2)
     
     def sumRange(self, i, j):
         """
