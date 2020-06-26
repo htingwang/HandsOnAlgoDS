@@ -5,32 +5,30 @@ class Solution(object):
         :type maxWidth: int
         :rtype: List[str]
         """
+        res = []
+        i = 0
         n = len(words)
-        i, j = 0, 1
-        ans = []
-        while i < n or j < n:
-            cur = len(words[i])
-            while j < n and cur + len(words[j]) + 1 <= maxWidth:
-                cur += (len(words[j]) + 1)
+        while i < n:
+            j = i
+            cur = 0
+            while j < n and cur + len(words[j]) + j - i <= maxWidth:
+                cur += len(words[j])
                 j += 1
-            extra1  = (maxWidth - cur)
-            extra2 = 0
-            tmp = words[i]
-            if j - i - 1 == 0:
-                tmp += " " * (maxWidth - cur)   
-            else:
-                extra1 = (maxWidth - cur) / (j - i - 1) + 1
-                extra2 = (maxWidth - cur) % (j - i - 1)
-                if j == n:
-                    extra1, extra2 = 1, 0
+ 
+            line = words[i]
+            if j - i - 1 != 0:
+                gap = (maxWidth - cur) / (j - i - 1)
+                extra = (maxWidth - cur) % (j - i - 1)
                 for k in range(i + 1, j):
-                    if k - (i + 1) < extra2:
-                        tmp += (" " * (extra1 + 1) + words[k])
+                    if j == n:
+                        line += " "
                     else:
-                        tmp += (" " * (extra1) + words[k])
-            tmp = tmp + " " * (maxWidth - len(tmp))
-            ans.append(tmp)
+                        if k - i <= extra:
+                            line += " " * (gap + 1)
+                        else:
+                            line += " " * gap
+                    line += words[k]
+            line += " " * (maxWidth - len(line))
+            res.append(line)
             i = j
-            j += 1
-        return ans
-        
+        return res
