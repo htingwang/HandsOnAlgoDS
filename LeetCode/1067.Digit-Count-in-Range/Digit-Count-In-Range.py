@@ -20,7 +20,7 @@ class Solution(object):
 
                 a *= 10
             return res
-        print(count(high), count(low - 1))
+
         return count(high) - count(low - 1)
         
         
