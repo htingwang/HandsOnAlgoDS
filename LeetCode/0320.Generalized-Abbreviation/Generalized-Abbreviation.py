@@ -5,6 +5,19 @@ class Solution(object):
         :rtype: List[str]
         """
         # Time: O(n * 2^n)
+        return self.generateAbbreviations2(word)
+    
+    def generateAbbreviations2(self, word):
+        res = []
+        res.append("" if len(word) == 0 else str(len(word)))
+        
+        for i in range(len(word)):
+            for a in self.generateAbbreviations2(word[i + 1 :]):
+                left = str(i) if i else ""
+                res.append(left + word[i] + a)
+        return res
+        
+    def generateAbbreviations1(self, word):
         res = []
         cur = []
         def dfs(i):
