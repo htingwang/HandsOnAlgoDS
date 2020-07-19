@@ -4,6 +4,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        return self.lengthOfLIS2(nums)
+    
+    def lengthOfLIS2(self, nums):
+        dp = []
+        for num in nums:
+            i = bisect.bisect_left(dp, num)
+            if i == len(dp): dp.append(num)
+            else: dp[i] = num
+        return len(dp)
+    
+    def lengthOfLIS1(self, nums):
         if not nums: return 0
         n = len(nums)
         min_last = [nums[0]]
@@ -20,3 +31,4 @@ class Solution(object):
                         right = mid
                 min_last[left] = nums[i]
         return len(min_last)
+        
